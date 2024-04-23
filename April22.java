@@ -1,5 +1,10 @@
-package booknew;
+package booknew.BoyarskyJeanne;
 
+/**
+ * file:///D:/Yu/Java%20certification/1%20Mala%20Gupta%20-%20OCA%20Java%20SE%208%20Programmer%20I%20Certification%20Guide-Manning%20Publications%20(2016).pdf
+ * page 550,553
+ *https://docs.oracle.com/javase/tutorial/java/annotations/declaring.html
+ */
 public class April22 {
 }
 
