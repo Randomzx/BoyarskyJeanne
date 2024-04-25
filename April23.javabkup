@@ -1,0 +1,87 @@
+package booknew.BoyarskyJeanne;
+/*
+// file:///D:/Yu/Java%20certification/Boyarsky%20Jeanne,%20Selikoff%20Scott%20-%20OCA%20Oracle%20Certified%20Associate%20Java%20SE%208%20Programmer%20I%20Study%20Guide%20Exam%201Z0-808-Sybex%20(2014).pdf
+page 19
+page 23
+page 22
+page 7
+Page 34
+ */
+
+public class April23 {
+
+    // the maximum number an int can hold is 2,147,483,647. How do we know this? One way is to have Java tell us:
+    public static void main(String[] args) {
+        System.out.println(Integer.MAX_VALUE);
+        // The other way is with math. An int is 32 bits. 2 32 is 4,294,967,296. Divide that by 2 and
+        //you get 2,147,483,648. Then subtract 1 as we did with bytes and you get 2,147,483,647.
+
+        /*
+        When a number is present in the code, it is called a literal. By default, Java assumes you are defining an int
+        value with a literal. In this example, the number listed is bigger than what fits in an int.
+        Remember, you aren’t expected to memorize the maximum value for an int. The exam will
+        include it in the question if it comes up. */
+        long max = 3123456789; // DOES NOT COMPILE
+        /*
+            Java complains the number is out of range. And it is—for an int. However, we don’t
+            have an int. The solution is to add the character L to the number:
+            long max = 3123456789L; // now Java knows it is a long
+        */
+
+
+        // Numeric literals is a feature added in Java 7. You can have underscores in numbers to make them easier to read
+        int million1 = 1000000;
+        int million2 = 1_000_000;
+        // You can add underscores anywhere except at the beginning of a literal, the end of a literal, right before a
+        // decimal point, or right after a decimal point.
+        double notAtStart = _1000.00; // DOES NOT COMPILE
+        double notAtEnd = 1000.00_; // DOES NOT COMPILE
+        double notByDecimal = 1000_.00; // DOES NOT COMPILE
+        double annoyingButLegal = 1_00_0.0_0; // this one compiles
+
+    }
+
+}
+
+//  Zoo program to print out the first two arguments passed in:
+class Zoo {
+    public static void main(String[] args) {
+        System.out.println(args[0]);
+        System.out.println(args[1]);
+    }
+}
+
+
+// Fields and instance initializer blocks are run in the order in which they appear in the file.
+// The constructor runs after all fields and instance initializer blocks have run.
+class Chick {
+    private String name = "Fluffy";
+
+    {
+        System.
+                out.println("setting field");
+    }
+
+    public Chick() {
+        name = "Tiny";
+        System.out.println("setting constructor");
+    }
+
+    public static void main(String[] args) {
+        Chick chick = new Chick();
+        System.out.println(chick.name);
+    }
+}
+// Order matters for the fields and blocks of code. You can’t refer to a variable before it has been initialized
+
+
+// Ordering Elements in a Class
+// Table - Element of a Class
+/*
+Element             Example                     Required?     Where does it go?
+Package             declaration package abc;    No              First line in the file
+Import statements   import java.util.*;         No              Immediately after the package
+Class declaration   public class C              Yes             Immediately after the import
+Field declarations  int value;                  No              Anywhere inside a class
+Method declarations void method()               No              Anywhere inside a class
+ */
